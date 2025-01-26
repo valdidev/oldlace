@@ -1,5 +1,8 @@
 
 config.php
+back/error.log
+logs.sqlite
+log/geoloc.sqlite
 .htaccess
 .htaccess.backup
 .htaccess.backup_country
