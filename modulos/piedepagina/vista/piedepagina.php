@@ -24,7 +24,7 @@
 	</div>
 </footer>
 <script>
-	<?php include "./modulos/piedepagina/control/piedepaginapiedepagina.js" ?>
+	<?php include "./modulos/piedepagina/control/piedepagina.js" ?>
 </script>
 <style>
 	<?php include "piedepagina.css" ?>
