@@ -6,13 +6,13 @@ class ConexionBD
 	private $conexion;
 	// Métodos de la clase
 	// Método constructor
-	public function __construct($dbservidor, $dbusuario, $dbcontrasena, $dbbasededatos)
+	public function __construct($servidor, $usuario, $contrasena, $db)
 	{
 		$this->conexion = mysqli_connect(
-			$dbservidor,
-			$dbusuario,
-			$dbcontrasena,
-			$dbbasededatos
+			$servidor,
+			$usuario,
+			$contrasena,
+			$db
 		);
 	}
 	// Otros métodos que necesito

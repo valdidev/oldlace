@@ -23,5 +23,5 @@ while ($fila = mysqli_fetch_array($resultado, MYSQLI_ASSOC)) {
 <script src="js/general.js"></script>
 <script>
 	console.log(window.location.href)
-	fetch("https://jocarsa.com/go/green/?url=" + encodeURI(window.location.href))
+	// fetch("https://jocarsa.com/go/green/?url=" + encodeURI(window.location.href))
 </script>
