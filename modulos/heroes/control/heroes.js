@@ -1,11 +1,9 @@
 function recogeHeroes() {
-  fetch(ruta_back + "?tabla=heroes") // Cargo un endpoint en el back
+  fetch(ruta_back + "?tabla=heroes")
     .then(function (response) {
-      // Cuando obtenga respuesta
-      return response.json(); // La conbierto en json
+      return response.json();
     })
     .then(function (datos) {
-      // Y cuando reciba datos
       console.log(datos);
       let contenedorheroes = document.querySelector("#heroes");
       let plantillaheroe = document.querySelector("#plantillaheroe");

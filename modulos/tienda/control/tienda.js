@@ -1,12 +1,10 @@
-// Me conecto a la base de datos en busca de ese producto
-
 listadoProductos();
 
 var actual = {};
-const queryString = window.location.search; // Atrapo la URL
-const urlParams = new URLSearchParams(queryString); // Extraigo los parametros
-const idproducto = urlParams.get("prod"); // Me quedo solo con el parametro que me interesa
-fetch(ruta_back + "?busca=productos&campo=titulo&dato=" + idproducto) // Construyo una peticion al servidor solo con el parametro que me interesa
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const idproducto = urlParams.get("prod");
+fetch(ruta_back + "?busca=productos&campo=titulo&dato=" + idproducto)
   .then(function (response) {
     return response.json();
   })
@@ -26,19 +24,15 @@ document.querySelector("#confirmar").onclick = function () {
   console.log("Confirmas que metes el producto en el carrito");
   const clavealmacenaje = "carrito";
 
-  // Verifica si el carrito existe en localStorage
   if (localStorage.getItem(clavealmacenaje) === null) {
-    localStorage.setItem(clavealmacenaje, "[]"); // Inicializa el carrito vacío
+    localStorage.setItem(clavealmacenaje, "[]");
   }
 
-  // Recupera el carrito actual
-  let contenidoanterior = JSON.parse(localStorage.getItem(clavealmacenaje)); // Convertimos a objeto JS
+  let contenidoanterior = JSON.parse(localStorage.getItem(clavealmacenaje));
   console.log("Contenido anterior del carrito:", contenidoanterior);
 
-  // Agrega el producto actual al carrito
   contenidoanterior.push(actual);
 
-  // Guarda el carrito actualizado
   localStorage.setItem(clavealmacenaje, JSON.stringify(contenidoanterior));
   console.log("Producto añadido al carrito:", actual);
 
@@ -82,19 +76,18 @@ document.querySelector("#enviardatos").onclick = function () {
     })
     .then(function (datos) {
       console.log(datos);
-      localStorage.removeItem("carrito"); // Vacío el carrito
-      window.location = "index.php"; // Te redirijo a la página principal
+      localStorage.removeItem("carrito");
+      window.location = "index.php";
     });
 };
 function listadoProductos() {
   const clavealmacenaje = "carrito";
-  // Listo los productos existentes:
   let productos = localStorage.getItem(clavealmacenaje);
   let productosjson = JSON.parse(productos);
   let totalcarrito = 0;
   console.log(productosjson);
   let contenedor = document.querySelector("#carrito");
-  contenedor.innerHTML = ""; // Cada vez que ejecutes el listado, vacia esteticamente el carrito
+  contenedor.innerHTML = "";
   if (productosjson != undefined) {
     productosjson.forEach(function (producto) {
       contenedor.innerHTML +=
@@ -145,6 +138,6 @@ function eliminarProducto(nombreProducto) {
   localStorage.setItem(clavealmacenaje, JSON.stringify(productosActualizados));
   console.log("Producto eliminado:", nombreProducto);
 
-  listadoProductos(); // Refresca el listado
-  setEliminarEventos(); // Vuelve a establecer los eventos para los nuevos elementos del DOM
+  listadoProductos();
+  setEliminarEventos();
 }

@@ -20,7 +20,7 @@
 		</div>
 	</div>
 	<div class="centro">
-		<h6>Web hecha con <img src="https://jocarsa.com/static/logo/jocarsa | black.svg">jocarsa | oldlace</h6>
+		<h6>Todos los derechos reservados</h6>
 	</div>
 </footer>
 <script>

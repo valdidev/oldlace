@@ -1,10 +1,8 @@
-fetch(ruta_back + "?tabla=oferta") // Cargo un endpoint en el back
+fetch(ruta_back + "?tabla=oferta")
   .then(function (response) {
-    // Cuando obtenga respuesta
-    return response.json(); // La conbierto en json
+    return response.json();
   })
   .then(function (datos) {
-    // Y cuando reciba datos
-    let texto = document.querySelector("#oferta p"); // Selecciono el texto
-    texto.innerHTML = datos[0].texto + " - <a href=''>Saber más</a>"; // Y le pongo el texto del json
+    let texto = document.querySelector("#oferta p");
+    texto.innerHTML = datos[0].texto + " - <a href=''>Saber más</a>";
   });

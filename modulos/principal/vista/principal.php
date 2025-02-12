@@ -1,5 +1,4 @@
 <main>
-
 	<?php include "modulos/oferta/vista/oferta.php" ?>
 	<?php include "modulos/heroes/vista/heroes.php" ?>
 	<?php include "modulos/destacados/vista/destacados.php" ?>

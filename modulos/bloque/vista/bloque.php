@@ -1,10 +1,10 @@
 <?php
-	include "./modulos/bloque/control/Classes/Bloque.php";
+include "./modulos/bloque/control/Classes/Bloque.php";
 ?>
 
 <script>
-	<?php include "./modulos/bloque/control/bloque.js"?>
+	<?php include "./modulos/bloque/control/bloque.js" ?>
 </script>
 <style>
-	<?php include "bloque.css"?>
+	<?php include "bloque.css" ?>
 </style>

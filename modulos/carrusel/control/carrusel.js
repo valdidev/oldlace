@@ -1,22 +1,18 @@
-let puntos = document.querySelectorAll(".punto"); // Selecciono los puntos
+let puntos = document.querySelectorAll(".punto");
 puntos.forEach(function (punto, index) {
-  // PAra cada uno de los puntos
   punto.onclick = function () {
-    // Cuando haga click en un punto
-    let carrusel1 = document.querySelector("#carrusel1"); // Cojo el carrusel
-    carrusel1.classList.remove("animado1"); // Paro la animacion
-    carrusel1.style.left = 0 - index * 1024 + "px"; // Le pongo a mano el desfase en base al punto en el cual he hecho click
+    let carrusel1 = document.querySelector("#carrusel1");
+    carrusel1.classList.remove("animado1");
+    carrusel1.style.left = 0 - index * 1024 + "px";
   };
 });
 
 function cargaProductos() {
-  fetch(ruta_back + "?tabla=productos") // Cargo un endpoint en el back
+  fetch(ruta_back + "?tabla=productos")
     .then(function (response) {
-      // Cuando obtenga respuesta
-      return response.json(); // La convierto en json
+      return response.json();
     })
     .then(function (datos) {
-      // Y cuando reciba datos
       console.log(datos);
       datos = datos.slice(0, 8);
       let contenedor = document.querySelector("#carrusel1");

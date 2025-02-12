@@ -1,5 +1,4 @@
 <section id="heroes">
-
 	<template id="plantillaheroe">
 		<article class="heroe">
 			<div class="texto">

@@ -1,13 +1,11 @@
 function pagina() {
   const urlParams = new URLSearchParams(window.location.search);
   const idpagina = urlParams.get("pagina");
-  fetch(ruta_back + "?busca=paginas&campo=Identificador&dato=" + idpagina) // Cargo un endpoint en el back
+  fetch(ruta_back + "?busca=paginas&campo=Identificador&dato=" + idpagina)
     .then(function (response) {
-      // Cuando obtenga respuesta
-      return response.json(); // La conbierto en json
+      return response.json();
     })
     .then(function (datos) {
-      // Y cuando reciba datos
       console.log(datos);
       datos.forEach(function (dato) {
         document.querySelector("#titulopagina").textContent = dato.titulo;

@@ -1,7 +1,7 @@
 <header>
 	<div class="contenedor">
-		<a href="index.php" id="corporativo"><img src="img/logo.svg">
-			<h1>jocarsa</h1>
+		<a href="index.php" id="corporativo">
+			<img src="img/oldlace-valdidev.png">
 		</a>
 		<nav>
 			<ul>

@@ -1,11 +1,9 @@
 function pieDePagina() {
-  fetch(ruta_back + "?tabla=redessociales") // Cargo un endpoint en el back
+  fetch(ruta_back + "?tabla=redessociales")
     .then(function (response) {
-      // Cuando obtenga respuesta
-      return response.json(); // La conbierto en json
+      return response.json();
     })
     .then(function (datos) {
-      // Y cuando reciba datos
       console.log(datos);
       let contenedor = document.querySelector("#redes");
       datos.forEach(function (dato) {

@@ -124,7 +124,6 @@ class BloqueCajaPasaFotos extends Bloque
             <div class='bloque caja cajapasafotos' style='$cadena'>
                 <div class='contenedorpasafotos' style='width:" . (count($textojson) * 900 + 100) . "px;'>";
 
-
         foreach ($textojson as $clave => $valor) {
             $cadena .= "
         				<article style='background:url(\"../static/" . $valor->imagen . "\");background-size:cover;'>
@@ -136,14 +135,12 @@ class BloqueCajaPasaFotos extends Bloque
         ";
         }
 
-
         $cadena .= "
                 </div>
                 <div class='controlador'>";
         for ($i = 1; $i <= count($textojson); $i++) {
             $cadena .= "<button value='" . $i . "'>" . $i . "</button>";
         }
-
 
         $cadena .= "    	
                 </div>
@@ -208,7 +205,6 @@ class BloqueMosaico extends Bloque
                 		</div>
                 	";
         }
-
 
         $contenido .= "
         		</div>

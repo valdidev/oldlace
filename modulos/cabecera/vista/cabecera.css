@@ -4,7 +4,7 @@ body {
   margin: 0px;
 }
 header {
-  height: 44px !important; /* Altura de la barra */
+  height: 44px !important;
   position: fixed;
   top: 0px;
   width: 100%;
@@ -86,7 +86,7 @@ h1 {
   top: -10px;
 }
 #corporativo {
-  display: inline-block; /* This makes the container behave as an inline-block element */
+  display: inline-block;
   vertical-align: top;
   margin-right: 10px;
 }

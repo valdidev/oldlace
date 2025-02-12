@@ -1,6 +1,5 @@
 document.querySelector("#enviar").onclick = function () {
   console.log("Voy a ver si envío un mensaje");
-  // Primero recojo los datos de los campos
   let nombre = document.querySelector("#nombre").value;
   let email = document.querySelector("#email").value;
   let asunto = document.querySelector("#asunto").value;
@@ -59,7 +58,6 @@ document.querySelector("#enviar").onclick = function () {
     envias = false;
   }
 
-  // Construyo el paquete que voy a enviar
   if (envias == true) {
     let formData = new FormData();
     formData.append("nombre", nombre);
@@ -67,7 +65,6 @@ document.querySelector("#enviar").onclick = function () {
     formData.append("asunto", asunto);
     formData.append("mensaje", mensaje);
 
-    // Send the form data via POST
     fetch(ruta_back + "/mail.php", {
       method: "POST",
       body: formData,

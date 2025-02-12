@@ -1,4 +1,3 @@
-/* Reset básico */
 h3,
 h4,
 p,
@@ -24,7 +23,6 @@ main .contenedor {
   padding: 20px;
 }
 
-/* Estilo del producto actual */
 #datosproductoactual {
   background: #fff;
   padding: 20px;
@@ -65,7 +63,6 @@ main .contenedor {
   background-color: #218838;
 }
 
-/* Estilo del carrito */
 #carrito {
   background: #fff;
   padding: 20px;
@@ -101,7 +98,6 @@ main .contenedor {
   color: #28a745;
 }
 
-/* Total del carrito */
 #total {
   margin-top: 20px;
   font-size: 1.2em;
@@ -109,7 +105,6 @@ main .contenedor {
   color: #000;
 }
 
-/* Procesar pedido */
 #procesarpedido {
   display: block;
   width: 100%;
@@ -129,7 +124,6 @@ main .contenedor {
   background-color: #0056b3;
 }
 
-/* Datos del cliente */
 #datoscliente {
   background: #fff;
   padding: 20px;

@@ -1,19 +1,16 @@
 function cargaBlog() {
-  fetch(ruta_back + "/?tabla=blog") // Cargo un endpoint en el back
+  fetch(ruta_back + "/?tabla=blog")
     .then(function (response) {
-      // Cuando obtenga respuesta
-      return response.json(); // La convierto en json
+      return response.json();
     })
     .then(function (datos) {
-      // Y cuando reciba datos
       console.log(datos);
-      let principal = document.querySelector("#contienearticulos"); // Selecciona la etiqueta principal
-      let plantilla = document.querySelector("#plantillaentrada"); // Selecciona el template
+      let principal = document.querySelector("#contienearticulos");
+      let plantilla = document.querySelector("#plantillaentrada");
       datos.forEach(function (dato) {
-        // Para cada dato recibido
-        let instancia = plantilla.content.cloneNode(true); // Clono la plantilla original
-        instancia.querySelector("h4").textContent = dato.titulo; // Introduzco un titulo personalizado
-        instancia.querySelector("time").textContent = dato.fecha; // Introduzco la fecha personalizada
+        let instancia = plantilla.content.cloneNode(true);
+        instancia.querySelector("h4").textContent = dato.titulo;
+        instancia.querySelector("time").textContent = dato.fecha;
         instancia
           .querySelector("article")
           .setAttribute("Identificador", dato.Identificador);
@@ -23,14 +20,12 @@ function cargaBlog() {
         instancia.querySelector("p").innerHTML =
           dato.contenido.substring(0, 250) + "...";
         instancia.querySelector("article").onclick = function () {
-          // Cargo el artículo del blog
           fetch(
             "../back/?busca=blog&campo=Identificador&dato=" +
               this.getAttribute("Identificador")
-          ) // Cargo un endpoint en el back
+          )
             .then(function (response) {
-              // Cuando obtenga respuesta
-              return response.json(); // La convierto en json
+              return response.json();
             })
             .then(function (datos) {
               let modal = document.querySelector("#modalpersonalizado");
@@ -52,7 +47,6 @@ function cargaBlog() {
               contenido.innerHTML = dato.contenido;
               modal.appendChild(contenido);
             });
-          // Eventos
           document.querySelector("#contienemodalpersonalizado").style.display =
             "block";
           document.querySelector("#contienemodalpersonalizado").onclick =
@@ -66,7 +60,7 @@ function cargaBlog() {
             event.stopPropagation();
           };
         };
-        principal.appendChild(instancia); // Añadimos la instancia al cuerpo
+        principal.appendChild(instancia);
       });
     });
 }

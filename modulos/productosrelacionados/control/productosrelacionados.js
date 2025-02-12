@@ -1,8 +1,7 @@
 function productosRelacionados() {
-  fetch(ruta_back + "?tabla=productos") // Cargo un endpoint en el back
+  fetch(ruta_back + "?tabla=productos") 
     .then(function (response) {
-      // Cuando obtenga respuesta
-      return response.json(); // La convierto en json
+      return response.json(); 
     })
     .then(function (datos) {
       console.log(datos);

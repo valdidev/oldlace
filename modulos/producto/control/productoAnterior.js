@@ -1,5 +1,3 @@
-console.log("js ok");
-
 let botones = document.querySelectorAll(".controlador button");
 console.log(botones);
 botones.forEach(function (boton) {
