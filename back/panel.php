@@ -1,22 +1,17 @@
 <?php
-// Set content type to HTML
 header("Content-Type: text/html");
 
-// Define the mail folder
 $mailFolder = __DIR__ . '/mail';
 
-// Check if the folder exists
 if (!is_dir($mailFolder)) {
     echo "<h1>No se encontró la carpeta 'mail'.</h1>";
     exit;
 }
 
-// Scan for JSON files and get their creation times
 $jsonFiles = array_filter(scandir($mailFolder), function ($file) use ($mailFolder) {
     return pathinfo($file, PATHINFO_EXTENSION) === 'json';
 });
 
-// Create an array of files with their metadata
 $fileData = [];
 foreach ($jsonFiles as $file) {
     $filePath = $mailFolder . '/' . $file;
@@ -27,7 +22,6 @@ foreach ($jsonFiles as $file) {
     ];
 }
 
-// Sort files by creation date (most recent first)
 usort($fileData, function ($a, $b) {
     return $b['creation_date'] - $a['creation_date'];
 });
@@ -132,7 +126,6 @@ usort($fileData, function ($a, $b) {
             <?php else: ?>
                 <?php foreach ($fileData as $file): ?>
                     <?php
-                    // Attempt to extract data from the JSON file
                     $jsonContent = file_get_contents($file['path']);
                     $data = json_decode($jsonContent, true);
                     $nombre = $data['nombre'] ?? 'N/A';
